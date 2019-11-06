@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ZhiHuTest</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="title">标题</string>
+    <string name="nick_name">昵称</string>
+</resources>
