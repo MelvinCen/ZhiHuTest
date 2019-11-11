@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:background="@drawable/item_color_selector"
     android:padding="13dp">
 
     <ImageView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_centerVertical="true"
-        android:textColor="#fff"
+        android:textColor="@drawable/text_color_selector"
         android:textSize="18sp"/>
 
 </RelativeLayout>

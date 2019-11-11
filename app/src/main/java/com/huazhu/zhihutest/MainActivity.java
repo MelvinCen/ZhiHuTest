@@ -7,9 +7,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ListView listView;
     private TextView tvTitle;
     private LinearLayout llRemind;
+    //左侧栏内容
+    private RelativeLayout mRlLeftContent;
 
 
     @Override
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageButton ibMore = findViewById(R.id.ib_more);
         tvTitle = findViewById(R.id.tv_title);
         llRemind = findViewById(R.id.ll_remind);
+        mRlLeftContent = findViewById(R.id.rl_left_content);
 
         initTitle();
         initLeftFunction();
@@ -89,6 +94,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initLeftFunction() {
         LeftFuncAdapter leftFuncAdapter = new LeftFuncAdapter(getApplicationContext());
         listView.setAdapter(leftFuncAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                drawerLayout.closeDrawer(mRlLeftContent);
+            }
+        });
     }
 
     @Override
